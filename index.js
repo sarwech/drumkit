@@ -5,29 +5,38 @@ let sounds = {
 	83: 'boom',
 	68: 'hihat',
 	70: 'kick',
-	71: 'ride',
-	72: 'snare',
-	74: 'tink',
-	75: 'tom',
+	90: 'ride',
+	88: 'snare',
+	67: 'tink',
+	86: 'tom',
 };
+
 
 window.addEventListener('keydown', e => {
 	console.log(e);
 	let soundId = sounds[e.keyCode];
-	let myElement = document.getElementById(e.keyCode);
-	myElement.style.color = "red";
-	setTimeout(() => {
-		myElement.style.color = "#fff";
-
-	}, 500);
-	console.log(soundId);
+	let textChange = document.getElementById(e.keyCode);
+	changeText(textChange);
+	// console.log(soundId);
 	document.getElementById(soundId).play();
 });
 
 window.addEventListener('click', e => {
-	console.log(e);
+	// console.log(e);
 	let soundId = sounds[e.target.id];
-	console.log(soundId);
+	soundId.replace(/['"]+/g, '');
+	let textChange = document.getElementById(e.target.id);
+	// console.log(textChange);
+	changeText(textChange);
+	// console.log(soundId);
 	document.getElementById(soundId).play();
 
 });
+
+function changeText(textChange) {
+	textChange.style.color = "red";
+	setTimeout(() => {
+		textChange.style.color = "#fff";
+
+	}, 500);
+}
