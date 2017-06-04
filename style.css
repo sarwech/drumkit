@@ -1,0 +1,17 @@
+body {
+	background-color: #000;
+	font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+	color: #fff;
+	background-color: blue;
+	width: 100%;
+	transition: color 0.5s;
+}
+
+/*h1:hover {
+	color: red;
+	text-shadow: 2px 2px green;
+}
+*/
